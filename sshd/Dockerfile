@@ -11,5 +11,12 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
+
+COPY ssh-pub-keys /tmp/ssh-pub-keys
+
+RUN mkdir /root/.ssh
+RUN cat /tmp/ssh-pub-keys/*.pub > /root/.ssh/authorized_keys
+
+
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
