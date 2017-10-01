@@ -1,0 +1,6 @@
+version: '2'
+services:
+  sshd:
+    build: "./sshd"
+    ports:
+      - "22"
