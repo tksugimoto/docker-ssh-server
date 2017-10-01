@@ -3,4 +3,4 @@ services:
   sshd:
     build: "./sshd"
     ports:
-      - "22"
+      - "${SSHD_BIND_IP_PORT}:22"
