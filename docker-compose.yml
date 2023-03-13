@@ -4,3 +4,5 @@ services:
     build: "./sshd"
     ports:
       - "${SSHD_BIND_IP_PORT}:22"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
