@@ -16,3 +16,12 @@
 docker-compose up
 ```
 * ※ 公開鍵の共有は初回(build時)のみ
+
+## docker-outside-of-docker
+- 主に Windows Subsystem for Linux で docker を動かしている場合に `docker ps` を実行しやすくする。
+    1. コンテナに `ssh`
+    1. `docker ps` で兄弟関係のコンテナをすべて見れる
+- Portforward で ホスト側からしか繋がらない Proxy への転送にも使えるはず
+    1. Portforward設定を追加
+    1. コンテナに `ssh`
+
